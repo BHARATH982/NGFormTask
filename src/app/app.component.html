@@ -1,0 +1,118 @@
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-warning rounded-circle">Warning</button>
+<p>bharath566@gmail.com</p>
+<p>1234567890</p>
+<p>{{date | date}}</p>
+<p>Father  name is {{fatherName}}</p>
+<!-- linear #stepper -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- <mat-stepper 
+[linear]="false" #stepper
+  class="example-stepper"
+  [orientation]="(stepperOrientation | async)!"
+  (selectionChange)="onStepChange($event,stepper)"> -->
+<!-- 
+  <mat-step label="Personal Details"> -->
+    <router-outlet></router-outlet>
+    <!-- <app-personal-details></app-personal-details> -->
+
+      <!-- <app-personal-details [forwardbutclicked1] ="forwardbutclicked" (sendFatherNametoApp)="receiveFatherNamefromPersonal($event)"></app-personal-details> -->
+      <!-- <div>
+        <button  routerLink="/educationDetails"   [disabled]="!personalDetailsFormValid" (click)="forwardButtonClicked()" color="primary">
+         <span class="material-icons">arrow_forward</span>
+       </button>
+      </div> -->
+      <!-- </mat-step> -->
+
+  <!-- <mat-step label="Education details">
+
+     <app-education-details [isResetForm]="isResetEducationalDetailsForm"></app-education-details>
+     <div class="horizontal-form">
+        <button mat-flat-button  matStepperPrevious color="warn">
+          <span class="material-icons">arrow_back</span>
+        </button>
+        <button mat-flat-button [disabled]="!educationDetailsFormValid" matStepperNext color="primary">
+          <span class="material-icons">arrow_forward</span>
+        </button>
+     </div>
+  </mat-step> -->
+
+  <!-- <mat-step  label="Declaration">
+    <app-declaration-details></app-declaration-details>
+    <div class="horizontal-form">
+      <button mat-flat-button  matStepperPrevious color="warn">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <button mat-flat-button  matStepperNext  color="primary"> 
+         <span class="material-icons">arrow_forward</span>
+      </button>
+    </div> 
+  </mat-step> -->
+
+  <!-- <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>Your application submitted.</p>
+    <div>
+      <button mat-flat-button  matStepperPrevious color="warn">
+        <span class="material-icons">arrow_back</span>
+      </button>
+    </div>
+  </mat-step> -->
+  
+<!-- </mat-stepper> -->
+
+
+
+<nav>
+  <a routerLink="/educationDetails">Education</a>
+   <br>
+  <a routerLink="/declarationDetails">decalaration</a>
+</nav> 
+
+
+<!-- <div #myDiv>Content</div> -->
+
+
+<!-- <div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>UserName</mat-label>
+        <input matInput formControlName="username" placeholder="Enter your name" required>
+        <mat-error *ngIf="myForm.get('email')?.hasError('required')">Email is required.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" required>
+        <mat-error *ngIf="myForm.get('email')?.hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="myForm.get('email')?.hasError('email')">Enter a valid email address.</mat-error>
+      </mat-form-field>
+    </div> 
+
+    <button mat-raised-button type="submit">Submit</button>
+  </form>
+</div> -->
+
+
+  <!-- <label for="username">Username:</label>
+  <input id="username" formControlName="username" />
+  <div *ngIf="myForm.get('username')?.touched && myForm.get('username')?.invalid">
+    <p>Name is required</p>
+       <small *ngIf="myForm.get('username')?.errors?.required">Username is required.</small> 
+  </div>
+
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email" />
+  <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
+    <p>Proper email is required</p>
+   </div>
+
+  <button type="submit">Submit</button> -->
+
+
+

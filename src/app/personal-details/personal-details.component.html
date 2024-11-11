@@ -1,0 +1,98 @@
+<!-- 
+<P>Father name is {{fatherName}}</P> -->
+
+<P> hi this is </P>
+
+<div [formGroup]="personalDetailGroup">
+    <div class="form-container">        
+      <div class="horizontal-form">  
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstName" required>
+          <mat-error *ngIf="personalDetailGroup.get('firstName')?.touched && personalDetailGroup.get('lastName')?.invalid">
+            first name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last name" formControlName="lastName" required>
+          <mat-error *ngIf="personalDetailGroup.get('lastName')?.touched && personalDetailGroup.get('lastName')?.invalid">
+            last name is required
+        </mat-error>
+        </mat-form-field>
+     </div>
+
+     <div class="horizontal-form"> 
+      <div class="radio-group">
+        <label>Gender:</label>
+         <br>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button *ngFor="let gender of genders" [value]="gender">
+            {{ gender }}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      </div>
+     
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" required>
+        <mat-error *ngIf="personalDetailGroup.get('email')?.touched && personalDetailGroup.get('email')?.invalid">
+          email is required
+        </mat-error>
+      </mat-form-field>
+     </div>
+   
+     <div class="horizontal-form"> 
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone number</mat-label>
+        <input matInput formControlName="phoneNumber" placeholder="Enter your phonenumber" required>
+        <mat-error *ngIf="personalDetailGroup.get('phoneNumber')?.touched && personalDetailGroup.get('phoneNumber')?.invalid">
+          phone number is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Select Languages</mat-label>
+        <mat-select>
+          <div *ngFor="let language of languages">
+            <mat-checkbox>
+              {{ language }}
+            </mat-checkbox>
+          </div>
+        </mat-select>
+    </mat-form-field>
+     
+     </div>
+    </div>
+</div>
+
+
+<div>
+  <button   [disabled]="!personalDetailsFormValid" (click)="forwardButtonClicked()" color="primary">
+   <span class="material-icons">arrow_forward</span>
+ </button>
+</div>
+
+<!-- <app-parent-details (fatherNameSentEvent)="receiveFatherName($event)"></app-parent-details> -->
+
+<!-- <form [formGroup]="personalDetailGroup">
+
+  <label for="name">Name:</label>
+  <input id="name" formControlName="firstName" />
+  
+  <label for="lastName">LastName:</label>
+  <input id="lastName" type="text" formControlName="lastName" />
+
+  <label for="email">Email:</label>
+  <input id="email" type="email" formControlName="email" />
+   
+  <label for="lastName">Gender</label>
+  <input id="lastName" type="text" formControlName="gender" />
+
+  <label for="lastName">Phone Number</label>
+  <input id="lastName" type="text" formControlName="phoneNumber" />
+
+  <button type="submit">Submit</button>
+</form> -->
